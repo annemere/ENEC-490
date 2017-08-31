@@ -21,11 +21,13 @@ set(gca, 'XTickLabel',{'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oc
 set(gca,'XTick',1:1:12);
 ylabel('Natural Gas Price ($/MMBtu)','FontSize',14);
 legend('2008','2009','2010','2011','2012','2013','2014','2015','2016');
+title('Henry Hub Natural Gas Prices','FontSize',14);
 
 
 %call monthly stats function
 s = monthly_stats(data);
-%I don't think this function works like it should...
+%I don't think this function works like it should... Error reads Index
+%exceeds matrix dimensions
 
 % april
 april = s(4,1) + s(4,2)*randn(1000,1);
@@ -50,5 +52,3 @@ legend('April','January');
 
 %2
 L = field_of_dreams(30,100);
-
-
